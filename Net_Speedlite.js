@@ -26,7 +26,7 @@ let content = ''
   if($.isTile()) {
     await notify('网络速率', '面板', '开始查询')
   }
-  const mb = $.lodash_get(arg, 'mb') || 3
+  const mb = $.lodash_get(arg, 'mb') || 0.5
   const bytes = mb * 1024 * 1024
   let start = Date.now()
   const res = await $.http.get({
@@ -72,12 +72,14 @@ let content = ''
   .catch(async e => {
     $.logErr(e)
     $.logErr($.toStr(e))
-    const msg = ${$.lodash_get(e, 'message') || $.lodash_get(e, 'error') || e}
-    title = ❌
+    const msg = `${$.lodash_get(e, 'message') || $.lodash_get(e, 'error') || e}`
+    title = `❌`
     content = msg
     await notify('网络速率', title, content)
-    const result = { title, content }
-    $.log($.toStr(result))
+$.log(title)
+$.log(content)
+    const result = { title, content}
+		//$.log($.toStr(result))
     $.done(result)
   })
   .finally(async () => {
