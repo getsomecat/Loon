@@ -74,7 +74,7 @@ let content = ''
     $.logErr($.toStr(e))
     const result = { title, content, icon, 'icon-color': color, ...arg}
   $.log($.toStr(result))
-    $.done(result)
+    $.done()
   })
   .finally(async () => {
     const result = { title, content, icon, 'icon-color': color, ...arg}
