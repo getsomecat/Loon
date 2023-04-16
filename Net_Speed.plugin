@@ -3,4 +3,5 @@
 
 [script]
 
-generic script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js, tag=NetSpeed, timeout=10,img-url=bolt
+generic script-path=https://raw.githubusercontent.com/getsomecat/GetSomeCats/Surge/modules/Panel/Net_Speed/Net_Speed.js, tag=NetSpeed, timeout=10,img-url=bolt.system
+
