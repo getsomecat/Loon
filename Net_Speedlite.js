@@ -76,6 +76,7 @@ let content = ''
     title = `❌`
     content = msg
     await notify('网络速率', title, content)
+    $.done()
   })
   .finally(async () => {
     const result = { title, content, icon, 'icon-color': color, ...arg}
