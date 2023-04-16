@@ -31,7 +31,8 @@ let content = ''
   let start = Date.now()
   const res = await $.http.get({
     url: `https://speed.cloudflare.com/__down?bytes=${bytes}`,
-    node: $environment.params.node
+    node: $environment.params.node，
+	  timeout: 3000
   })
   const time = $.lodash_get(res, 'headers.cf-meta-request-time')
   const end = Date.now()
@@ -40,7 +41,8 @@ let content = ''
   const pingstart = Date.now()
 	const ping = await $.http.get({
 		url: `http://cp.cloudflare.com/generate_204`,
-       node: $environment.params.node
+       node: $environment.params.node，
+		timeout: 3000
   })
 	pingt = Date.now()-pingstart
 	console.log('to see:'+pingt)
