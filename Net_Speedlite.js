@@ -72,11 +72,9 @@ let content = ''
   .catch(async e => {
     $.logErr(e)
     $.logErr($.toStr(e))
-    const msg = `${$.lodash_get(e, 'message') || $.lodash_get(e, 'error') || e}`
-    title = `❌`
-    content = msg
-    await notify('网络速率', title, content)
-    $.done()
+    const result = { title, content, icon, 'icon-color': color, ...arg}
+  $.log($.toStr(result))
+    $.done(result)
   })
   .finally(async () => {
     const result = { title, content, icon, 'icon-color': color, ...arg}
