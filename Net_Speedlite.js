@@ -26,7 +26,7 @@ let content = ''
   if($.isTile()) {
     await notify('网络速率', '面板', '开始查询')
   }
-  const mb = $.lodash_get(arg, 'mb') || 1
+  const mb = $.lodash_get(arg, 'mb') || 3
   const bytes = mb * 1024 * 1024
   let start = Date.now()
   const res = await $.http.get({
