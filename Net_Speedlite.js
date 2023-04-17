@@ -26,7 +26,7 @@ let content = ''
   if($.isTile()) {
     await notify('网络速率', '面板', '开始查询')
   }
-  const mb = $.lodash_get(arg, 'mb') || 0.5
+  const mb = $.lodash_get(arg, 'mb') || 1
   const bytes = mb * 1024 * 1024
   let start = Date.now()
   const res = await $.http.get({
@@ -34,9 +34,8 @@ let content = ''
     node: $environment.params.node,
     timeout:3000
   })
-  const time = $.lodash_get(res, 'headers.cf-meta-request-time')
   const end = Date.now()
-  const duration = (end - time || start) / 1000
+  const duration = (end - start) / 1000
   const speed = mb / duration
   const pingstart = Date.now()
 	const ping = await $.http.get({
