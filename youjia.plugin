@@ -8,4 +8,4 @@
 
 [Script]
 
-cron "0 18 * * *" script-path=https://github.com/Keywos/rule/raw/main/JS/loonyj.js, tag=每日油价
+cron "0 18 * * *" script-path=https://raw.githubusercontent.com/getsomecat/Loon/main/youjia.js, tag=每日油价
